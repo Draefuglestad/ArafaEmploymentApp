@@ -1,0 +1,108 @@
+﻿@model ArafaEmploymentApp.Models.Applicant
+
+@{
+    ViewData["Title"] = "Form";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EmploymentHistory">
+            <h2>Employment History</h2> <!--duplicating fields here for user to input up to 3 previous employers-->
+            <h5>Most Recent Employer:</h5>
+            <div class="form-group">
+                <label asp-for="EmployerName" class="control-label"></label>
+                <input asp-for="EmployerName" class="form-control" />
+                <span asp-validation-for="EmployerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployerCity" class="control-label"></label>
+                <input asp-for="EmployerCity" class="form-control" />
+                <span asp-validation-for="EmployerCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployerState" class="control-label"></label>
+                <input asp-for="EmployerState" class="form-control" />
+                <span asp-validation-for="EmployerState" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployerZip" class="control-label"></label>
+                <input asp-for="EmployerZip" class="form-control" />
+                <span asp-validation-for="EmployerZip" class="text-danger"></span>
+            </div>
+            <h5>Previous Employer</h5>
+            <div class="form-group">
+                <label asp-for="EmployerName" class="control-label"></label>
+                <input asp-for="EmployerName" class="form-control" />
+                <span asp-validation-for="EmployerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployerCity" class="control-label"></label>
+                <input asp-for="EmployerCity" class="form-control" />
+                <span asp-validation-for="EmployerCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployerState" class="control-label"></label>
+                <input asp-for="EmployerState" class="form-control" />
+                <span asp-validation-for="EmployerState" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployerZip" class="control-label"></label>
+                <input asp-for="EmployerZip" class="form-control" />
+                <span asp-validation-for="EmployerZip" class="text-danger"></span>
+            </div>
+            <h5>Previous Employer:</h5>
+            <div class="form-group">
+                <label asp-for="EmployerName" class="control-label"></label>
+                <input asp-for="EmployerName" class="form-control" />
+                <span asp-validation-for="EmployerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployerCity" class="control-label"></label>
+                <input asp-for="EmployerCity" class="form-control" />
+                <span asp-validation-for="EmployerCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployerState" class="control-label"></label>
+                <input asp-for="EmployerState" class="form-control" />
+                <span asp-validation-for="EmployerState" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmployerZip" class="control-label"></label>
+                <input asp-for="EmployerZip" class="form-control" />
+                <span asp-validation-for="EmployerZip" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="FiredBefore" /> @Html.DisplayNameFor(model => model.FiredBefore)
+                </label>
+            </div>
+            <h5>Days of Work Missed Due to Child Illness/Out of School?</h5>
+            <div class="form-row">
+                <div class="form-group">
+                    <label asp-for="WorkMissedPastMonth" class="control-label"></label>
+                    <input asp-for="WorkMissedPastMonth" class="form-control" min="0" oninput="this.value = Math.abs(this.value)" />
+                    <span asp-validation-for="WorkMissedPastMonth" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="WorkMissedPastSixMonths" class="control-label"></label>
+                    <input asp-for="WorkMissedPastSixMonths" class="form-control" min="0" oninput="this.value = Math.abs(this.value)" />
+                    <span asp-validation-for="WorkMissedPastSixMonths" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="WorkMissedPastYear" class="control-label"></label>
+                    <input asp-for="WorkMissedPastYear" class="form-control" min="0" oninput="this.value = Math.abs(this.value)" />
+                    <span asp-validation-for="WorkMissedPastYear" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Background">Next Page</a>
+    <a asp-action="Index">Exit Application</a>
+</div>

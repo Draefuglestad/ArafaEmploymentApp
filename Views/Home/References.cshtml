@@ -1,0 +1,53 @@
+﻿@model ArafaEmploymentApp.Models.Applicant
+
+@{
+    ViewData["Title"] = "Form";
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="References">
+            <h2>References</h2> <!--duplicating fields here to make it 3 references to match common job applications-->
+            <h5>Reference 1:</h5>
+            <div class="form-group">
+                <label asp-for="References" class="control-label"></label>
+                <input asp-for="References" class="form-control" />
+                <span asp-validation-for="References" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReferencePhoneNumber" class="control-label"></label>
+                <input asp-for="ReferencePhoneNumber" class="form-control" />
+                <span asp-validation-for="ReferencePhoneNumber" class="text-danger"></span>
+            </div>
+            <h5>Reference 2:</h5>
+            <div class="form-group">
+                <label asp-for="References" class="control-label"></label>
+                <input asp-for="References" class="form-control" />
+                <span asp-validation-for="References" class="text-danger"></span>
+            </div>
+            <h5>Reference 3:</h5>
+            <div class="form-group">
+                <label asp-for="ReferencePhoneNumber" class="control-label"></label>
+                <input asp-for="ReferencePhoneNumber" class="form-control" />
+                <span asp-validation-for="ReferencePhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="References" class="control-label"></label>
+                <input asp-for="References" class="form-control" />
+                <span asp-validation-for="References" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReferencePhoneNumber" class="control-label"></label>
+                <input asp-for="ReferencePhoneNumber" class="form-control" />
+                <span asp-validation-for="ReferencePhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<a asp-action="Submission">Complete Application</a>
+<a asp-action="Index">Exit Application</a>
