@@ -1,4 +1,4 @@
-﻿@model ArafaEmploymentApp.Models.Applicant
+﻿@model ArafaEmploymentApp.Models.References
 
 @{
     ViewData["Title"] = "Form";
@@ -11,9 +11,14 @@
             <h2>References</h2> <!--duplicating fields here to make it 3 references to match common job applications-->
             <h5>Reference 1:</h5>
             <div class="form-group">
-                <label asp-for="References" class="control-label"></label>
-                <input asp-for="References" class="form-control" />
-                <span asp-validation-for="References" class="text-danger"></span>
+                <label asp-for="ReferenceFullName" class="control-label"></label>
+                <input asp-for="ReferenceFullName" class="form-control" />
+                <span asp-validation-for="ReferenceFullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReferenceEmail" class="control-label"></label>
+                <input asp-for="ReferenceEmail" class="form-control" />
+                <span asp-validation-for="ReferenceEmail" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ReferencePhoneNumber" class="control-label"></label>
@@ -22,32 +27,41 @@
             </div>
             <h5>Reference 2:</h5>
             <div class="form-group">
-                <label asp-for="References" class="control-label"></label>
-                <input asp-for="References" class="form-control" />
-                <span asp-validation-for="References" class="text-danger"></span>
+                <label asp-for="ReferenceFullName" class="control-label"></label>
+                <input asp-for="ReferenceFullName" class="form-control" />
+                <span asp-validation-for="ReferenceFullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReferenceEmail" class="control-label"></label>
+                <input asp-for="ReferenceEmail" class="form-control" />
+                <span asp-validation-for="ReferenceEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReferencePhoneNumber" class="control-label"></label>
+                <input asp-for="ReferencePhoneNumber" class="form-control" />
+                <span asp-validation-for="ReferencePhoneNumber" class="text-danger"></span>
             </div>
             <h5>Reference 3:</h5>
             <div class="form-group">
+                <label asp-for="ReferenceFullName" class="control-label"></label>
+                <input asp-for="ReferenceFullName" class="form-control" />
+                <span asp-validation-for="ReferenceFullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReferenceEmail" class="control-label"></label>
+                <input asp-for="ReferenceEmail" class="form-control" />
+                <span asp-validation-for="ReferenceEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="ReferencePhoneNumber" class="control-label"></label>
                 <input asp-for="ReferencePhoneNumber" class="form-control" />
                 <span asp-validation-for="ReferencePhoneNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="References" class="control-label"></label>
-                <input asp-for="References" class="form-control" />
-                <span asp-validation-for="References" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ReferencePhoneNumber" class="control-label"></label>
-                <input asp-for="ReferencePhoneNumber" class="form-control" />
-                <span asp-validation-for="ReferencePhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save and Complete" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<a asp-action="Submission">Complete Application</a>
 <a asp-action="Index">Exit Application</a>

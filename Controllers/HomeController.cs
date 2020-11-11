@@ -33,18 +33,18 @@ namespace ArafaEmploymentApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                RedirectToAction("EmploymentHistory");
+                return RedirectToAction("EmploymentHistory");
             }
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult EmploymentHistory(Applicant applicant)
+        public IActionResult EmploymentHistory(EmploymentHistory employmentHistory)
         {
             if (ModelState.IsValid)
             {
-                RedirectToAction("EmploymentHistory");
+                return RedirectToAction("Background");
             }
             return View();
         }
@@ -57,11 +57,11 @@ namespace ArafaEmploymentApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Background(Applicant applicant)
+        public IActionResult Background(Background background)
         {
             if (ModelState.IsValid)
             {
-                RedirectToAction("Background");
+                return RedirectToAction("References");
             }
             return View();
         }
@@ -78,11 +78,11 @@ namespace ArafaEmploymentApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult References(Applicant applicant)
+        public IActionResult References(References references)
         {
             if (ModelState.IsValid)
             {
-                RedirectToAction("References");
+                return RedirectToAction("Submission");
             }
             return View();
         }
