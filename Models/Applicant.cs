@@ -15,12 +15,6 @@ namespace ArafaEmploymentApp.Models
         public string LastName { get; set; }
 
         [Required(ErrorMessage = "Please choose date.")]
-        [Display(Name = "Today's Date")]
-        [DataType(DataType.Date)]
-        [CustomAdmissionDate(ErrorMessage = "Date must be less than or equal to Today's Date.")]
-        public DateTime AdmissionDate { get; set; }
-
-        [Required(ErrorMessage = "Please choose date.")]
         [Display(Name = "Date Available to Work")]
         [DataType(DataType.Date)]
         public DateTime StartDate { get; set; }
@@ -141,12 +135,10 @@ namespace ArafaEmploymentApp.Models
         [Display(Name = "Driver's license Issue Date")]
         public string DLIssueState { get; set; }
 
-        [Required(ErrorMessage = "Please choose date.")]
         [Display(Name = "Driver's license expires:")]
         [DataType(DataType.Date)]
         public DateTime DLExpireDate { get; set; }
 
-   
 
         [Display(Name = "Have any children?")]
         public bool HasChildren { get; set; }
@@ -166,5 +158,21 @@ namespace ArafaEmploymentApp.Models
 
         [Display(Name = "Children")]
         public bool HaveHealthInsuranceChildren { get; set; }
+
+        [Display(Name = "Have you ever lost your health insurance?")]
+        public bool LostHealthInsurance { get; set; }
+
+        [Display(Name = "List any additional skills or experience here")]
+        public string AdditionalSkills { get; set; }
+
+        [Display(Name = "Please provide signature")]
+        [Required]
+        public string Signature { get; set; }
+
+        [Required(ErrorMessage = "Please choose date.")]
+        [Display(Name = "Today's Date")]
+        [DataType(DataType.Date)]
+        [CustomAdmissionDate(ErrorMessage = "Date must be less than or equal to Today's Date.")]
+        public DateTime AdmissionDate { get; set; }
     }
 }

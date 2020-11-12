@@ -26,6 +26,22 @@ namespace ArafaEmploymentApp.Controllers
             return View();
         }
 
+        public IActionResult Education()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Education(Applicant applicant)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Background");
+            }
+            return View();
+        }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -44,7 +60,7 @@ namespace ArafaEmploymentApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Background");
+                return RedirectToAction("Education");
             }
             return View();
         }
