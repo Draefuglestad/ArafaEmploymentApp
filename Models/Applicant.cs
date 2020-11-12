@@ -14,11 +14,6 @@ namespace ArafaEmploymentApp.Models
         [Required(ErrorMessage = "Please enter last name")]
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "Please choose date.")]
-        [Display(Name = "Date Available to Work")]
-        [DataType(DataType.Date)]
-        public DateTime StartDate { get; set; }
-
         [Display(Name = "Address")]
         [Required(ErrorMessage = "Please enter street address")]
         public string AddressStreet { get; set; }//changed address types to multiple fields
@@ -109,17 +104,7 @@ namespace ArafaEmploymentApp.Models
         //[Required(ErrorMessage = "Please enter your gender")]
         //public string[] Gender { get; set; }
 
-        [Display(Name = "Days available to work")]
-        public string DaysAvailable { get; set; }
-
-        [Display(Name = "Employment Desired (Full-time, Part-time)")]
-        public string DesiredEmployment { get; set; }
-
-        [Display(Name = "Hours weekly able to work")]
-        public int HoursAvailable { get; set; }
-
-        [Display(Name = "Work Nights?")]
-        public bool WorkNights { get; set; }
+    
 
         [Display(Name = "Have you previously been fired?")]
         public bool FiredBefore { get; set; }
@@ -132,18 +117,18 @@ namespace ArafaEmploymentApp.Models
         [Display(Name = "Driver's license #")]
         public string DLNum { get; set; }
 
-        [Display(Name = "Driver's license Issue Date")]
+        [Display(Name = "Driver's license Issue State")]
         public string DLIssueState { get; set; }
 
-        [Display(Name = "Driver's license expires:")]
-        [DataType(DataType.Date)]
-        public DateTime DLExpireDate { get; set; }
+        //[Display(Name = "Driver's license expires:")]
+        //[DataType(DataType.Date)]
+        //public DateTime DLExpireDate { get; set; } see view page
 
 
-        [Display(Name = "Have any children?")]
-        public bool HasChildren { get; set; }
+        //[Display(Name = "Have any children?")]
+        //public bool HasChildren { get; set; } see view page
 
-        [Display(Name = "How many children?")]
+        [Display(Name = "How many children are you responsible for?")]
         public int NumOfChildren { get; set; }
 
 
@@ -162,17 +147,7 @@ namespace ArafaEmploymentApp.Models
         [Display(Name = "Have you ever lost your health insurance?")]
         public bool LostHealthInsurance { get; set; }
 
-        [Display(Name = "List any additional skills or experience here")]
-        public string AdditionalSkills { get; set; }
 
-        [Display(Name = "Please provide signature")]
-        [Required]
-        public string Signature { get; set; }
-
-        [Required(ErrorMessage = "Please choose date.")]
-        [Display(Name = "Today's Date")]
-        [DataType(DataType.Date)]
-        [CustomAdmissionDate(ErrorMessage = "Date must be less than or equal to Today's Date.")]
-        public DateTime AdmissionDate { get; set; }
+ 
     }
 }

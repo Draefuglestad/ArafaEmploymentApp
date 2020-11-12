@@ -20,5 +20,16 @@ namespace ArafaEmploymentApp.Models
 
 
 
+        [Display(Name = "Please provide signature")]
+        [Required]
+        public string Signature { get; set; }
+
+        [Required(ErrorMessage = "Please choose date.")]
+        [Display(Name = "Today's Date")]
+        [DataType(DataType.Date)]
+        [CustomAdmissionDate(ErrorMessage = "Date must be less than or equal to Today's Date.")]
+        public DateTime AdmissionDate { get; set; }
+
+
     }
 }

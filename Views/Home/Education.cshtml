@@ -1,0 +1,26 @@
+﻿@model ArafaEmploymentApp.Models.Education
+
+@{
+    ViewData["Title"] = "Form";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Education">
+            <h2>Background</h2>
+            <div class="form-group">
+                <label asp-for="AdditionalEducation" class="control-label"></label>
+                <input asp-for="AdditionalEducation" class="form-control" />
+                <span asp-validation-for="AdditionalEducation" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save and Continue" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="form-group">
+    <a asp-action="Index">Exit Application</a>
+</div>

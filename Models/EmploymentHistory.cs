@@ -29,5 +29,9 @@ namespace ArafaEmploymentApp.Models
 
         [Display(Name = "Past year?")]
         public int WorkMissedPastYear { get; set; }
+
+
+        [Display(Name = "List any additional skills or experience here")]
+        public string AdditionalSkills { get; set; }
     }
 }

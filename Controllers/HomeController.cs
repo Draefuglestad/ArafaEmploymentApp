@@ -20,29 +20,6 @@ namespace ArafaEmploymentApp.Controllers
         {
             return View();
         }
-
-        public IActionResult EmploymentHistory()
-        {
-            return View();
-        }
-
-        public IActionResult Education()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Education(Applicant applicant)
-        {
-            if (ModelState.IsValid)
-            {
-                return RedirectToAction("Background");
-            }
-            return View();
-        }
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult ApplicantInformation(Applicant applicant)
@@ -54,9 +31,29 @@ namespace ArafaEmploymentApp.Controllers
             return View();
         }
 
+        public IActionResult EmploymentHistory()
+        {
+            return View();
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult EmploymentHistory(EmploymentHistory employmentHistory)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Availability");
+            }
+            return View();
+        }
+
+        public IActionResult Availability()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Availability(Availability availability)
         {
             if (ModelState.IsValid)
             {
@@ -64,6 +61,28 @@ namespace ArafaEmploymentApp.Controllers
             }
             return View();
         }
+
+
+
+
+        public IActionResult Education()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Education(Education education)
+        {
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Background");
+            }
+            return View();
+        }
+       
+
+       
 
         public IActionResult Background()
         {
@@ -87,10 +106,6 @@ namespace ArafaEmploymentApp.Controllers
             return View();
         }
 
-        public IActionResult Submission()
-        {
-            return View();
-        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -102,5 +117,11 @@ namespace ArafaEmploymentApp.Controllers
             }
             return View();
         }
+
+        public IActionResult Submission()
+        {
+            return View();
+        }
+
     }
 }

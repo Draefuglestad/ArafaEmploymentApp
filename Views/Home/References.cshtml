@@ -1,7 +1,7 @@
 ﻿@model ArafaEmploymentApp.Models.References
 
 @{
-    ViewData["Title"] = "Form";
+    ViewData["Title"] = "Siganture and References";
 }
 
 
@@ -57,6 +57,19 @@
                 <input asp-for="ReferencePhoneNumber" class="form-control" />
                 <span asp-validation-for="ReferencePhoneNumber" class="text-danger"></span>
             </div>
+
+            <h4>Signature and date</h4>
+            <div class="form-group">
+                <label asp-for="Signature" class="control-label"></label>
+                <input asp-for="Signature" class="form-control" />
+                <span asp-validation-for="Signature" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdmissionDate" class="control-label"></label>
+                <input asp-for="AdmissionDate" class="form-control" />
+                <span asp-validation-for="AdmissionDate" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <input type="submit" value="Save and Complete" class="btn btn-primary" />
             </div>

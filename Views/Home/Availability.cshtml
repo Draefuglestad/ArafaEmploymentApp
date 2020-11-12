@@ -1,0 +1,48 @@
+﻿@model ArafaEmploymentApp.Models.Availability
+
+@{
+    ViewData["Title"] = "Availability";
+
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <h2>Applicant Information</h2>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <div class="form-group">
+                    <label asp-for="DaysAvailable" class="control-label"></label>
+                    <input asp-for="DaysAvailable" class="form-control" />
+                    @*<span asp-validation-for="DaysAvailable" class="text-danger"></span>*@
+                </div>
+                <div class="form-group">
+                    <label asp-for="DesiredEmployment" class="control-label"></label>
+                    <input asp-for="DesiredEmployment" class="form-control" />
+                    @*<span asp-validation-for="DesiredEmployment" class="text-danger"></span>*@
+                </div>
+                <div class="form-group">
+                    <label asp-for="HoursAvailable" class="control-label"></label>
+                    <input asp-for="HoursAvailable" class="form-control" />
+                    <span asp-validation-for="HoursAvailable" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="StartDate" class="control-label"></label>
+                    <input asp-for="StartDate" class="form-control" />
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="WorkNights" /> @Html.DisplayNameFor(model => model.WorkNights)
+                    </label>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save and Continue" class="btn btn-primary" />
+                </div>
+        </form>
+    </div>
+</div>
+
+<div class="form-group">
+    <a asp-action="Index">Exit Application</a>
+</div>
