@@ -11,5 +11,18 @@ namespace ArafaEmploymentApp.Models
     {
         [Display(Name = "Additional Diplomas, Degrees, etc.")]
         public string AdditionalEducation { get; set;}
+
+        [Display(Name = "Highest Education Earned?")]
+        public string HighestEducationEarned { get; set;}
+
+        [Display(Name = "School Name")]
+        public string SchoolName { get; set; }
+
+        [Display(Name = "Graduation Date")]
+        [DataType(DataType.Date)]
+        public DateTime GraduationDate { get; set; }
+
+        [Display(Name = "School State")]
+        public string SchoolState { get; set;}
     }
 }
