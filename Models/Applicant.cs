@@ -10,13 +10,16 @@ namespace ArafaEmploymentApp.Models
         [Required(ErrorMessage = "Please enter first name")]
         public string FirstName { get; set; }
 
+        [Display(Name = "Middle Name")]
+        public string MiddleName { get; set; }
+
         [Display(Name = "Last Name")]
         [Required(ErrorMessage = "Please enter last name")]
         public string LastName { get; set; }
 
         [Display(Name = "Address")]
         [Required(ErrorMessage = "Please enter street address")]
-        public string AddressStreet { get; set; }//changed address types to multiple fields
+        public string AddressStreet { get; set; } //changed address types to multiple fields
 
         [Display(Name = "City")]
         [Required(ErrorMessage = "Please enter address city")]
@@ -96,20 +99,16 @@ namespace ArafaEmploymentApp.Models
         //[Display(Name = "Medical History")]
         //public string[] MedicalHistory { get; set; }
 
-        //[Display(Name = "Race")]
-        //[Required(ErrorMessage = "Please enter your race")]
-        //public string[] Race { get; set; }
+        [Display(Name = "Race")]
+        [Required(ErrorMessage = "Please enter your race")]
+        public string Race { get; set; }
 
-        //[Display(Name = "Gender")]
-        //[Required(ErrorMessage = "Please enter your gender")]
-        //public string[] Gender { get; set; }
-
-    
+        [Display(Name = "Gender")]
+        [Required(ErrorMessage = "Please enter your gender")]
+        public string Gender { get; set; }
 
         [Display(Name = "Have you previously been fired?")]
         public bool FiredBefore { get; set; }
-
-
 
         [Display(Name = "Do you have a driver's license?")]
         public bool DriversLicense { get; set; }

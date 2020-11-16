@@ -77,19 +77,20 @@
                     <input class="form-check-input" asp-for="FiredBefore" /> @Html.DisplayNameFor(model => model.FiredBefore)
                 </label>
             </div>
+
             <h5>Days of Work Missed Due to Child Illness/Out of School?</h5>
             <div class="form-row">
-                <div class="form-group">
+                <div class="form-group col-md-4">
                     <label asp-for="WorkMissedPastMonth" class="control-label"></label>
                     <input asp-for="WorkMissedPastMonth" class="form-control" min="0" oninput="this.value = Math.abs(this.value)" />
                     <span asp-validation-for="WorkMissedPastMonth" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-4">
                     <label asp-for="WorkMissedPastSixMonths" class="control-label"></label>
                     <input asp-for="WorkMissedPastSixMonths" class="form-control" min="0" oninput="this.value = Math.abs(this.value)" />
                     <span asp-validation-for="WorkMissedPastSixMonths" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-md-4">
                     <label asp-for="WorkMissedPastYear" class="control-label"></label>
                     <input asp-for="WorkMissedPastYear" class="form-control" min="0" oninput="this.value = Math.abs(this.value)" />
                     <span asp-validation-for="WorkMissedPastYear" class="text-danger"></span>

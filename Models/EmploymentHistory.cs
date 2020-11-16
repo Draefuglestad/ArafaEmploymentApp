@@ -17,19 +17,18 @@ namespace ArafaEmploymentApp.Models
 
         [Display(Name = "Zip")]
         public string EmployerZip { get; set; }
-        [Display(Name = "Past month?")]
-        public int WorkMissedPastMonth { get; set; }
-
 
         [Display(Name = "Have you previously been fired?")]
         public bool FiredBefore { get; set; }
 
-        [Display(Name = "Past six months?")]
+        [Display(Name = "Days missed in the past month?")]
+        public int WorkMissedPastMonth { get; set; }
+
+        [Display(Name = "Days missed in the past six months?")]
         public int WorkMissedPastSixMonths { get; set; }
 
-        [Display(Name = "Past year?")]
+        [Display(Name = "Days missed in the past year?")]
         public int WorkMissedPastYear { get; set; }
-
 
         [Display(Name = "List any additional skills or experience here")]
         public string AdditionalSkills { get; set; }
