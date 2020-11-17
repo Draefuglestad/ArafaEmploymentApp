@@ -18,6 +18,11 @@ namespace ArafaEmploymentApp.Models
         [Display(Name = "Zip")]
         public string EmployerZip { get; set; }
 
+        [Display(Name = "Phone")]
+        [Phone]
+        [Required(ErrorMessage = "Please enter a phone number")]
+        public string EmployerNumber { get; set; }
+
         [Display(Name = "Have you previously been fired?")]
         public bool FiredBefore { get; set; }
 
@@ -43,5 +48,25 @@ namespace ArafaEmploymentApp.Models
         // Does it go in background as in previous salary or current salary? 
         [Display(Name = "What was your salary?")]
         public double PastSalary { get; set; }
+        [Display(Name = "Employer Email address")]
+        
+        [EmailAddress]
+        public string EmployerEmail { get; set; }
+
+        [Display(Name = "Supervisor Name")]
+        public string SupervisorName { get; set; }
+
+        [Display(Name = "Last Job Title")]
+        public string JobTitle { get; set; }
+
+        [Required(ErrorMessage = "Please choose date.")]
+        [Display(Name = "Employment start date:")]
+        [DataType(DataType.Date)]
+        public DateTime EmploymentDateFrom { get; set; }
+
+        [Required(ErrorMessage = "Please choose date.")]
+        [Display(Name = "Employment end date:")]
+        [DataType(DataType.Date)]
+        public DateTime EmploymentDateTo { get; set; }
     }
 }
