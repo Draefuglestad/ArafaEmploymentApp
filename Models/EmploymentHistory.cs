@@ -37,7 +37,18 @@ namespace ArafaEmploymentApp.Models
         [Display(Name = "List any additional skills or experience here")]
         public string AdditionalSkills { get; set; }
 
+        [Display(Name = "Contact Employer?")]
+        public bool ContactEmployer { get; set; }
+
+        [Display(Name = "Duties Performed, Skills Used, etc")]
+        public string Tasks { get; set; }
+
+        // JOE: Not sure where this was supposed to be placed?
+        // Does it go in background as in previous salary or current salary? 
+        [Display(Name = "What was your salary?")]
+        public double PastSalary { get; set; }
         [Display(Name = "Employer Email address")]
+        
         [EmailAddress]
         public string EmployerEmail { get; set; }
 

@@ -110,6 +110,15 @@ namespace ArafaEmploymentApp.Models
         [Display(Name = "Have you previously been fired?")]
         public bool FiredBefore { get; set; }
 
+        [Display(Name = "Do you currently own a vehicle?")]
+        public bool OwnVehicle { get; set; }
+
+        [Display(Name = "Willing to Drive a personal vehicle?")]
+        public bool PersonalVehicle { get; set; }
+                
+        [Display(Name = "Make/Model/Year")]
+        public string CarMakeModel { get; set; }
+
         [Display(Name = "Do you have a driver's license?")]
         public bool DriversLicense { get; set; }
 
@@ -118,6 +127,10 @@ namespace ArafaEmploymentApp.Models
 
         [Display(Name = "Driver's license Issue State")]
         public string DLIssueState { get; set; }
+
+
+        [Display(Name = "Do you have car insurance?")]
+        public bool CarInsurance { get; set; }
 
         //[Display(Name = "Driver's license expires:")]
         //[DataType(DataType.Date)]
@@ -130,7 +143,8 @@ namespace ArafaEmploymentApp.Models
         [Display(Name = "How many children are you responsible for?")]
         public int NumOfChildren { get; set; }
 
-
+        [Display(Name = "Current Marital Status")]
+        public string MaritalStatus { get; set; }
         // Do you currently have health insurance?
         // Changed from string to seperate boolean fields for yourself/spouse/children.
 

@@ -8,7 +8,8 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="EmploymentHistory">
-            <h2>Employment History</h2> <!--duplicating fields here for user to input up to 3 previous employers-->
+            <h2>Employment History</h2>
+            <!--duplicating fields here for user to input up to 3 previous employers-->
             <h5>Most Recent Employer:</h5>
             <div class="form-group">
                 <label asp-for="EmployerName" class="control-label"></label>
@@ -135,6 +136,13 @@
                 <span asp-validation-for="EmployerZip" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Tasks" class="control-label"></label>
+                <input asp-for="Tasks" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ContactEmployer" class="control-label"></label>
+                <input asp-for="ContactEmployer" class="form-control" />
+                <span asp-validation-for="ContactEmployer" class="text-danger"></span>
                 <label asp-for="EmployerNumber" class="control-label"></label>
                 <input asp-for="EmployerNumber" class="form-control" />
                 <span asp-validation-for="EmployerNumber" class="text-danger"></span>
@@ -166,7 +174,8 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="FiredBefore" /> @Html.DisplayNameFor(model => model.FiredBefore)
+                    <input class="form-check-input" asp-for="FiredBefore" /> @Html.DisplayNameFor(model =>
+                                                                                    model.FiredBefore)
                 </label>
             </div>
 
@@ -174,17 +183,20 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label asp-for="WorkMissedPastMonth" class="control-label"></label>
-                    <input asp-for="WorkMissedPastMonth" class="form-control" min="0" oninput="this.value = Math.abs(this.value)" />
+                    <input asp-for="WorkMissedPastMonth" class="form-control" min="0"
+                        oninput="this.value = Math.abs(this.value)" />
                     <span asp-validation-for="WorkMissedPastMonth" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-4">
                     <label asp-for="WorkMissedPastSixMonths" class="control-label"></label>
-                    <input asp-for="WorkMissedPastSixMonths" class="form-control" min="0" oninput="this.value = Math.abs(this.value)" />
+                    <input asp-for="WorkMissedPastSixMonths" class="form-control" min="0"
+                        oninput="this.value = Math.abs(this.value)" />
                     <span asp-validation-for="WorkMissedPastSixMonths" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-4">
                     <label asp-for="WorkMissedPastYear" class="control-label"></label>
-                    <input asp-for="WorkMissedPastYear" class="form-control" min="0" oninput="this.value = Math.abs(this.value)" />
+                    <input asp-for="WorkMissedPastYear" class="form-control" min="0"
+                        oninput="this.value = Math.abs(this.value)" />
                     <span asp-validation-for="WorkMissedPastYear" class="text-danger"></span>
                 </div>
             </div>
