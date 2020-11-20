@@ -2,18 +2,19 @@
 
 @{
     ViewData["Title"] = "ApplicantInformation";
-
 }
 
+<button type="button" id="sidebarCollapse" class="btn btn-info">
+    <i class="fas fa-align-left"></i>
+    <span>Toggle Sidebar</span>
+</button>
 
-<h4>Applicant Information</h4>
+<section class="header"><h3>Applicant Information</h3></section>
 <hr />
-<div class="container">
-    <div class="row-fluid">
-        <form method="post">
-
-            <h3>Name</h3>
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<main class="container-fluid">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <section>
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label asp-for="FirstName" class="control-label"></label>
@@ -31,20 +32,18 @@
                     <span asp-validation-for="LastName" class="text-danger"></span>
                 </div>
             </div>
-
-            <h3>Address</h3>
             <div class="form-group">
                 <label asp-for="AddressStreet" class="control-label"></label>
                 <input asp-for="AddressStreet" class="form-control" />
                 <span asp-validation-for="AddressStreet" class="text-danger"></span>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
                     <label asp-for="AddressCity" class="control-label"></label>
                     <input asp-for="AddressCity" class="form-control" />
                     <span asp-validation-for="AddressCity" class="text-danger"></span>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
                     <label asp-for="AddressState" class="control-label"></label>
                     <select asp-for="AddressState" class="form-control">
                         <option value="AL">Alabama</option>
@@ -102,45 +101,31 @@
                     @*@<input asp-for="AddressState" class="form-control" />*@
                     <span asp-validation-for="AddressState" class="text-danger"></span>
                 </div>
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-3">
                     <label asp-for="AddressZip" class="control-label"></label>
                     <input type="text" pattern="[0-9]{5}" asp-for="AddressZip" class="form-control" />
                     <span asp-validation-for="AddressZip" class="text-danger"></span>
                 </div>
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-3">
                     <label asp-for="AddressYears" class="control-label"></label>
                     <input min="0"
-                        oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"
-                        asp-for="AddressYears" class="form-control" />
+                           oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"
+                           asp-for="AddressYears" class="form-control" />
                     <span asp-validation-for="AddressYears" class="text-danger"></span>
                 </div>
             </div>
-
-            <h3>Contact information</h3>
-            <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
-                <input asp-for="PhoneNumber" class="form-control" />
-                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="PhoneNumber" class="control-label"></label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-
-            <h3>Application Status</h3>
-            <div class="form-group">
-                <label asp-for="PositionApplied" class="control-label"></label>
-                <input asp-for="PositionApplied" class="form-control" />
-                <span asp-validation-for="PositionApplied" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DesiredSalary" class="control-label"></label>
-                <input asp-for="DesiredSalary" class="form-control" />
-                <span asp-validation-for="DesiredSalary" class="text-danger"></span>
-            </div>
-
-            <h3>Personal information</h3>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label asp-for="Race" class="control-label"></label>
@@ -153,26 +138,43 @@
                     <span asp-validation-for="Gender" class="text-danger"></span>
                 </div>
             </div>
-            <div class="form-group">
-                <label asp-for="SSN" class="control-label"></label>
-                <input asp-for="SSN" class="form-control" />
-                <span asp-validation-for="SSN" class="text-danger"></span>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="SSN" class="control-label"></label>
+                    <input asp-for="SSN" class="form-control" />
+                    <span asp-validation-for="SSN" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="DateofBirth" class="control-label"></label>
+                    <input asp-for="DateofBirth" class="form-control" />
+                    <span asp-validation-for="DateofBirth" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="DateofBirth" class="control-label"></label>
-                <input asp-for="DateofBirth" class="form-control" />
-                <span asp-validation-for="DateofBirth" class="text-danger"></span>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="PositionApplied" class="control-label"></label>
+                    <input asp-for="PositionApplied" class="form-control" />
+                    <span asp-validation-for="PositionApplied" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="DesiredSalary" class="control-label"></label>
+                    <input asp-for="DesiredSalary" class="form-control" />
+                    <span asp-validation-for="DesiredSalary" class="text-danger"></span>
+                </div>
             </div>
+        </section>
+
+        <hr />
+
+        <section>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="OwnVehicle" /> @Html.DisplayNameFor(model =>
-                                                                                        model.OwnVehicle)
+                    <input class="form-check-input" asp-for="OwnVehicle" /> @Html.DisplayNameFor(model => model.OwnVehicle)
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="PersonalVehicle" /> @Html.DisplayNameFor(model =>
-                                                                                        model.PersonalVehicle)
+                    <input class="form-check-input" asp-for="PersonalVehicle" /> @Html.DisplayNameFor(model => model.PersonalVehicle)
                 </label>
             </div>
             <div class="form-group">
@@ -181,14 +183,12 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="CarInsurance" /> @Html.DisplayNameFor(model =>
-                                                                                     model.CarInsurance)
+                    <input class="form-check-input" asp-for="CarInsurance" /> @Html.DisplayNameFor(model => model.CarInsurance)
                 </label>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="DriversLicense" /> @Html.DisplayNameFor(model =>
-                                                                                       model.DriversLicense)
+                    <input class="form-check-input" asp-for="DriversLicense" /> @Html.DisplayNameFor(model => model.DriversLicense)
                 </label>
             </div>
             <div class="form-group">
@@ -254,183 +254,172 @@
                 @*<input asp-for="DLIssueState" class="form-control" /> *@
                 @*<span asp-validation-for="DLIssueState" class="text-danger"></span>*@
             </div>
-            @*<div class="form-group">
-                <label asp-for="DLExpireDate" class="control-label"></label>
-                <input asp-for="DLExpireDate" class="form-control" />
-                <span asp-validation-for="DLExpireDate" class="text-danger"></span>
-                </div> let's just remove this field bc it's not important, if we have their DL number we dont need
-                expiration date*@
-            @*<div class="form-group form-check">
-                <label class="form-check-label">
-                <input class="form-check-input" id="HasChildren" asp-for="HasChildren" /> @Html.DisplayNameFor(model =>
-                model.HasChildren)
-                </label>
-                </div> we can also remove this one because "number of children" answers this question for us, since they are
-                required to put at least 0 for
-                number of children. saves the user time. *@
+        </section>
+
+        <div class="form-group">
+            <label asp-for="MaritalStatus" class="control-label"></label>
+            <select asp-for="MaritalStatus" class="form-control">
+                <option value="Married">Married</option>
+                <option value="Single">Single</option>
+                <option value="Divorced">Divorced</option>
+                <option value="Widowed">Widowed</option>
+            </select>
             <div class="form-group">
-                <label asp-for="MaritalStatus" class="control-label"></label>
-                <select asp-for="MaritalStatus" class="form-control">
-                    <option value="Married">Married</option>
-                    <option value="Single">Single</option>
-                    <option value="Divorced">Divorced</option>
-                    <option value="Widowed">Widowed</option>
-                </select>
-                <div class="form-group">
-                    <label asp-for="NumOfChildren" class="control-label"></label>
-                    <input asp-for="NumOfChildren" class="form-control" />
-                    <span asp-validation-for="NumOfChildren" class="text-danger"></span>
-                </div>
-
-
-                <h5>Do You Currently Have Health Insurance for: </h5>
-                <div class="container-fluid">
-                    <div class="form-row">
-                        <div class="form-group form-check col-sm-3">
-                            <label class="form-group form-check-label">
-                                <input class="form-check-input" asp-for="HaveHealthInsuranceYourself" />
-                                @Html.DisplayNameFor(model => model.HaveHealthInsuranceYourself)
-                            </label>
-                        </div>
-                        <div class="form-group form-check col-sm-3">
-                            <label class="form-check-label">
-                                <input class="form-check-input" asp-for="HaveHealthInsuranceSpouse" />
-                                @Html.DisplayNameFor(model => model.HaveHealthInsuranceSpouse)
-                            </label>
-                        </div>
-                        <div class="form-group form-check col-sm-3">
-                            <label class="form-check-label">
-                                <input class="form-check-input" asp-for="HaveHealthInsuranceChildren" />
-                                @Html.DisplayNameFor(model => model.HaveHealthInsuranceChildren)
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group form-check">
-                    <label class="form-check-label" asp-for="LostHealthInsurance">
-                        <input class="form-check-input" asp-for="LostHealthInsurance" /> @Html.DisplayNameFor(model =>
-                                                                                                    model.LostHealthInsurance)
+                <label asp-for="NumOfChildren" class="control-label"></label>
+                <input asp-for="NumOfChildren" class="form-control" />
+                <span asp-validation-for="NumOfChildren" class="text-danger"></span>
+            </div>
+        </div>
+        <h5>Do You Currently Have Health Insurance for: </h5>
+        <div class="container-fluid">
+            <div class="form-row">
+                <div class="form-group form-check col-sm-3">
+                    <label class="form-group form-check-label">
+                        <input class="form-check-input" asp-for="HaveHealthInsuranceYourself" />
+                        @Html.DisplayNameFor(model => model.HaveHealthInsuranceYourself)
                     </label>
-                    @*@<span asp-validation-for="LostHealthInsurance" class="text-danger"></span>*@
                 </div>
+                <div class="form-group form-check col-sm-3">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="HaveHealthInsuranceSpouse" />
+                        @Html.DisplayNameFor(model => model.HaveHealthInsuranceSpouse)
+                    </label>
+                </div>
+                <div class="form-group form-check col-sm-3">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="HaveHealthInsuranceChildren" />
+                        @Html.DisplayNameFor(model => model.HaveHealthInsuranceChildren)
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label" asp-for="LostHealthInsurance">
+                <input class="form-check-input" asp-for="LostHealthInsurance" /> @Html.DisplayNameFor(model => model.LostHealthInsurance)
+            </label>
+            @*@<span asp-validation-for="LostHealthInsurance" class="text-danger"></span>*@
+        </div>
 
-                <h3>Emergency Contact</h3>
-                <div class="form-row">
-                    <div class="form-group col-md-4">
-                        <label asp-for="EmergencyFirstName" class="control-label"></label>
-                        <input asp-for="EmergencyFirstName" class="form-control" />
-                        @*<span asp-validation-for="EmergencyFirstName" class="text-danger"></span>*@
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label asp-for="EmergencyMiddleName" class="control-label"></label>
-                        <input asp-for="EmergencyMiddleName" class="form-control" />
-                        @*<span asp-validation-for="EmergencyMiddleName" class="text-danger"></span>*@
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label asp-for="EmergencyLastName" class="control-label"></label>
-                        <input asp-for="EmergencyLastName" class="form-control" />
-                        @*<span asp-validation-for="EmergencyLastName" class="text-danger"></span>*@
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label asp-for="EmergencyAddressStreet" class="control-label"></label>
-                    <input asp-for="EmergencyAddressStreet" class="form-control" />
-                    @*<span asp-validation-for="EmergencyAddressStreet" class="text-danger"></span>*@
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-5">
-                        <label asp-for="EmergencyAddressCity" class="control-label"></label>
-                        <input asp-for="EmergencyAddressCity" class="form-control" />
-                        @*<span asp-validation-for="EmergencyAddressCity" class="text-danger"></span>*@
-                    </div>
-                    <div class="form-group col-md-5">
-                        <label asp-for="EmergencyAddressState" class="control-label"></label>
-                        <select asp-for="EmergencyAddressState" class="form-control">
-                            <option value="AL">Alabama</option>
-                            <option value="AK">Alaska</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="CA">California</option>
-                            <option value="CO">Colorado</option>
-                            <option value="CT">Connecticut</option>
-                            <option value="DE">Delaware</option>
-                            <option value="DC">District Of Columbia</option>
-                            <option value="FL">Florida</option>
-                            <option value="GA">Georgia</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="ID">Idaho</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IN">Indiana</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="ME">Maine</option>
-                            <option value="MD">Maryland</option>
-                            <option value="MA">Massachusetts</option>
-                            <option value="MI">Michigan</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MO">Missouri</option>
-                            <option value="MT">Montana</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NV">Nevada</option>
-                            <option value="NH">New Hampshire</option>
-                            <option value="NJ">New Jersey</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="NY">New York</option>
-                            <option value="NC">North Carolina</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="OH">Ohio</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="OR">Oregon</option>
-                            <option value="PA">Pennsylvania</option>
-                            <option value="RI">Rhode Island</option>
-                            <option value="SC">South Carolina</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TN">Tennessee</option>
-                            <option value="TX">Texas</option>
-                            <option value="UT">Utah</option>
-                            <option value="VT">Vermont</option>
-                            <option value="VA">Virginia</option>
-                            <option value="WA">Washington</option>
-                            <option value="WV">West Virginia</option>
-                            <option value="WI">Wisconsin</option>
-                            <option value="WY">Wyoming</option>
-                        </select>
-                        @*@<input asp-for="EmergencyAddressState" class="form-control" />*@
-                        @*<span asp-validation-for="EmergencyAddressState" class="text-danger"></span>*@
-                    </div>
-                    <div class="form-group col-md-2">
-                        <label asp-for="EmergencyAddressZip" class="control-label"></label>
-                        <input type="text" pattern="[0-9]{5}" asp-for="EmergencyAddressZip" class="form-control" />
-                        @*<span asp-validation-for="EmergencyAddressZip" class="text-danger"></span>*@
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label asp-for="EmergencyPhoneNumber" class="control-label"></label>
-                        <input asp-for="EmergencyPhoneNumber" class="form-control" />
-                        @*<span asp-validation-for="EmergencyPhoneNumber" class="text-danger"></span>*@
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label asp-for="EmergencyEmail" class="control-label"></label>
-                        <input asp-for="EmergencyEmail" class="form-control" />
-                        @*<span asp-validation-for="EmergencyEmail" class="text-danger"></span>*@
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label asp-for="EmergencyRelationship" class="control-label"></label>
-                    <input asp-for="EmergencyRelationship" class="form-control" />
-                    @*<span asp-validation-for="EmergencyRelationship" class="text-danger"></span>*@
-                </div>
+        <hr />
 
-                <div class="form-group">
-                    <input type="submit" value="Save and Continue" class="btn btn-primary" />
+        <h3>Emergency Contact</h3>
+        <section>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label asp-for="EmergencyFirstName" class="control-label"></label>
+                    <input asp-for="EmergencyFirstName" class="form-control" />
+                    @*<span asp-validation-for="EmergencyFirstName" class="text-danger"></span>*@
                 </div>
-        </form>
-    </div>
-</div>
+                <div class="form-group col-md-4">
+                    <label asp-for="EmergencyMiddleName" class="control-label"></label>
+                    <input asp-for="EmergencyMiddleName" class="form-control" />
+                    @*<span asp-validation-for="EmergencyMiddleName" class="text-danger"></span>*@
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="EmergencyLastName" class="control-label"></label>
+                    <input asp-for="EmergencyLastName" class="form-control" />
+                    @*<span asp-validation-for="EmergencyLastName" class="text-danger"></span>*@
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmergencyAddressStreet" class="control-label"></label>
+                <input asp-for="EmergencyAddressStreet" class="form-control" />
+                @*<span asp-validation-for="EmergencyAddressStreet" class="text-danger"></span>*@
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-5">
+                    <label asp-for="EmergencyAddressCity" class="control-label"></label>
+                    <input asp-for="EmergencyAddressCity" class="form-control" />
+                    @*<span asp-validation-for="EmergencyAddressCity" class="text-danger"></span>*@
+                </div>
+                <div class="form-group col-md-5">
+                    <label asp-for="EmergencyAddressState" class="control-label"></label>
+                    <select asp-for="EmergencyAddressState" class="form-control">
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District Of Columbia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                    @*@<input asp-for="EmergencyAddressState" class="form-control" />*@
+                    @*<span asp-validation-for="EmergencyAddressState" class="text-danger"></span>*@
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="EmergencyAddressZip" class="control-label"></label>
+                    <input type="text" pattern="[0-9]{5}" asp-for="EmergencyAddressZip" class="form-control" />
+                    @*<span asp-validation-for="EmergencyAddressZip" class="text-danger"></span>*@
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="EmergencyPhoneNumber" class="control-label"></label>
+                    <input asp-for="EmergencyPhoneNumber" class="form-control" />
+                    @*<span asp-validation-for="EmergencyPhoneNumber" class="text-danger"></span>*@
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="EmergencyEmail" class="control-label"></label>
+                    <input asp-for="EmergencyEmail" class="form-control" />
+                    @*<span asp-validation-for="EmergencyEmail" class="text-danger"></span>*@
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmergencyRelationship" class="control-label"></label>
+                <input asp-for="EmergencyRelationship" class="form-control" />
+                @*<span asp-validation-for="EmergencyRelationship" class="text-danger"></span>*@
+            </div>
+        </section>
+
+        <div class="form-group">
+            <input type="submit" value="Save and Continue" class="btn btn-primary" />
+        </div>
+    </form>
+</main>
 
 <div>
     <a asp-action="Index">Exit Application</a>
