@@ -13,6 +13,7 @@ namespace ArafaEmploymentApp.Models
         public string AdditionalEducation { get; set;}
 
         [Display(Name = "Highest Education Earned?")]
+        [Required(ErrorMessage = "Highest Education Required")]
         public string HighestEducationEarned { get; set;}
 
         [Display(Name = "School Name")]
