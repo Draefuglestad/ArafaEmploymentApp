@@ -100,11 +100,9 @@ namespace ArafaEmploymentApp.Models
         //public string[] MedicalHistory { get; set; }
 
         [Display(Name = "Race")]
-        [Required(ErrorMessage = "Please enter your race")]
         public string Race { get; set; }
 
         [Display(Name = "Gender")]
-        [Required(ErrorMessage = "Please enter your gender")]
         public string Gender { get; set; }
 
         [Display(Name = "Have you previously been fired?")]

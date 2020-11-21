@@ -20,7 +20,7 @@ namespace ArafaEmploymentApp.Models
 
         [Display(Name = "Graduation Date")]
         [DataType(DataType.Date)]
-        public DateTime GraduationDate { get; set; }
+        public DateTime? GraduationDate { get; set; }
 
         [Display(Name = "School State")]
         public string SchoolState { get; set;}
