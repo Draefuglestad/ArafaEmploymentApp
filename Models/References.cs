@@ -15,7 +15,6 @@ namespace ArafaEmploymentApp.Models
 
         [Display(Name = "Phone")]
         [Phone]
-        [Required(ErrorMessage = "Please enter a phone number")]
         public string ReferencePhoneNumber { get; set; }
 
 

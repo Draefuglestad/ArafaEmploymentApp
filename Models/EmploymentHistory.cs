@@ -60,10 +60,10 @@ namespace ArafaEmploymentApp.Models
 
         [Display(Name = "Employment start date:")]
         [DataType(DataType.Date)]
-        public DateTime EmploymentDateFrom { get; set; }
+        public DateTime? EmploymentDateFrom { get; set; }
 
         [Display(Name = "Employment end date:")]
         [DataType(DataType.Date)]
-        public DateTime EmploymentDateTo { get; set; }
+        public DateTime? EmploymentDateTo { get; set; }
     }
 }
