@@ -4,35 +4,19 @@
     ViewData["Title"] = "Education";
 }
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Education">
-            <h2>Background</h2>
-
-            <div class="form-group">
-                <label asp-for="AdditionalEducation" class="control-label"></label>
-                <input asp-for="AdditionalEducation" class="form-control" />
-                <span asp-validation-for="AdditionalEducation" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="HighestEducationEarned" class="control-label"></label>
-                <select asp-for="HighestEducationEarned" class="form-control">
-                    <option value="HighSchool">High School</option>
-                    <option value="GED">GED</option>
-                    <option value="Assoc">Associates</option>
-                    <option value="Bach">Bachelors</option>
-                    <option value="MS">Masters</option>
-                    <option value="PHD">Post Doc</option>
-                </select>
-            <div class="form-group">
+<main class="container">
+    <form asp-action="Education">
+        <div class="form-group">
+            <label asp-for="AdditionalEducation" class="control-label"></label>
+            <input asp-for="AdditionalEducation" class="form-control" />
+            <span asp-validation-for="AdditionalEducation" class="text-danger"></span>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-6">
                 <label asp-for="SchoolName" class="control-label"></label>
                 <input asp-for="SchoolName" class="form-control" />
             </div>
-            <div class="form-group">
-                <label asp-for="GraduationDate" class="control-label"></label>
-                <input asp-for="GraduationDate" class="form-control" />
-            </div>
-            <div class="form-group">
+            <div class="form-group col-6">
                 <label asp-for="SchoolState" class="control-label"></label>
                 <select asp-for="SchoolState" class="form-control">
                     <option value="AL">Alabama</option>
@@ -87,13 +71,31 @@
                     <option value="WI">Wisconsin</option>
                     <option value="WY">Wyoming</option>
                 </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-6">
+                <label asp-for="HighestEducationEarned" class="control-label"></label>
+                <select asp-for="HighestEducationEarned" class="form-control">
+                    <option value="HighSchool">High School</option>
+                    <option value="GED">GED</option>
+                    <option value="Assoc">Associates</option>
+                    <option value="Bach">Bachelors</option>
+                    <option value="MS">Masters</option>
+                    <option value="PHD">Post Doc</option>
+                </select>
+            </div>
+            <div class="form-group col-6">
+                <label asp-for="GraduationDate" class="control-label"></label>
+                <input asp-for="GraduationDate" class="form-control" />
+            </div>
+        </div>
 
-                <div class="form-group">
-                    <input type="submit" value="Save and Continue" class="btn btn-primary" />
-                </div>
-        </form>
-    </div>
-</div>
+        <div class="form-group">
+            <input type="submit" value="Save and Continue" class="btn btn-primary" />
+        </div>
+    </form>
+</main>
 
 <div class="form-group">
     <a asp-action="Index">Exit Application</a>
