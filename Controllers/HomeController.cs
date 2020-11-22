@@ -154,6 +154,24 @@ namespace ArafaEmploymentApp.Controllers
             if (ModelState.IsValid)
             {
                 HttpContext.Session.SetString("References", JsonConvert.SerializeObject(references));
+                return RedirectToAction("Waiver");
+            }
+            return View();
+        }
+
+
+        public IActionResult Waiver()
+        {
+            return View();
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Waiver(Waiver waiver)
+        {
+            if (ModelState.IsValid)
+            {
                 return RedirectToAction("Submission");
             }
             return View();
