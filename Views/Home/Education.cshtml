@@ -6,6 +6,11 @@
 
 <main class="container">
     <form asp-action="Education">
+        </br><button type="button" id="sidebarCollapse" class="btn btn-secondary" onclick="toggleSidebar()">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+
         <section class="header"><h3>Education</h3></section><hr />
         <div class="form-group">
             <label asp-for="AdditionalEducation" class="control-label"></label>
