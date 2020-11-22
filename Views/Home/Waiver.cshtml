@@ -1,0 +1,54 @@
+﻿@model ArafaEmploymentApp.Models.Waiver
+@{
+    ViewData["Title"] = "Waiver";
+}
+
+<section class="header"><h3>Waiver and Acknowledgement Statement</h3></section>
+<hr />
+<main class="container">
+    <form asp-action="Waiver">
+        <p>
+            <b>I agree to the following by submitting the job application to UNFinished Business:</b><br>
+
+            If the following application is accepted or any further relationship is established, the applicant agrees that
+            this does not equate to an actual contract of employment with the company. Further, this contract does not mean that
+            the applicant is entitled to remain an employee at UNFinished Business. Either the business or the applicant can end the
+            relationship at any point in time, without any prior notice. The company reserves the right to adjust any of the benefits
+            that have been previously provided, including reduction.</br>
+            I, as the applicant, allow for any investigation into the comments and claims made in this document.
+            I also agree that any false or misleading facts will end with an immediate dismissal, without any prior notice needed.
+            As the applicant, I allow UNFinished Business to make contact with any previous employers, references,
+            and other social connections that I may have provided in the document, and agree that UNFinished Business is not liable for any contact made.</br>
+            </br>
+
+            I understand and accept that UNFinished Business has a strict drug and alcohol policy that allows for testing before
+            and during employment, and I give my consent to follow the policy as it is written. I also understand that my continued
+            employment is contingent on successful test results.</br>
+
+            I understand that UNFinished Business may conduct investigations into my financial records, reputation, and other personal aspects about myself.</br>
+            I understand that, if I request, UNFinished Business will provide me with the scope of the reports and investigations done, 
+            as it is required by the Fair Credit Reporting Act.</br>
+
+            I understand that the employment that follows, within 60 days, will be probationary, and at any time before or after those 60 days my
+            employment can be dismissed by UNFinished Business or the applicant or any reason.</br>
+        </p>
+        <section>
+            <center><h4>Signature and date</h4></center></hr>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Signature" class="control-label"></label>
+                    <input asp-for="Signature" class="form-control" />
+                    <span asp-validation-for="Signature" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="AdmissionDate" class="control-label"></label>
+                    <input asp-for="AdmissionDate" class="form-control" />
+                    <span asp-validation-for="AdmissionDate" class="text-danger"></span>
+                </div>
+            </div>
+        </section>
+        <div class="form-group">
+            <center> <input type="submit" value="Save and Complete" class="btn btn-secondary" /></center>
+        </div>
+
+     </form></main>

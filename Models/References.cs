@@ -15,19 +15,12 @@ namespace ArafaEmploymentApp.Models
 
         [Display(Name = "Phone")]
         [Phone]
+        [StringLength(10, ErrorMessage = "Incorrect length")]
         public string ReferencePhoneNumber { get; set; }
 
 
 
-        [Display(Name = "Please provide signature")]
-        [Required]
-        public string Signature { get; set; }
-
-        [Required(ErrorMessage = "Please choose date.")]
-        [Display(Name = "Today's Date")]
-        [DataType(DataType.Date)]
-        [CustomAdmissionDate(ErrorMessage = "Date must be less than or equal to Today's Date.")]
-        public DateTime AdmissionDate { get; set; }
+ 
 
 
     }

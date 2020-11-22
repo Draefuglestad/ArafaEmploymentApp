@@ -1,9 +1,13 @@
 ﻿@model ArafaEmploymentApp.Models.References
 
 @{
-    ViewData["Title"] = "Siganture and References";
+    ViewData["Title"] = "References";
 }
 
+</br><button type="button" id="sidebarCollapse" class="btn btn-secondary" onclick="toggleSidebar()">
+    <i class="fas fa-align-left"></i>
+    <span>Toggle Sidebar</span>
+</button>
 
 <section class="header"><h3>References and Signature</h3></section>
 <hr />
@@ -30,22 +34,11 @@
                 </div>
             </div>
         </div>
-
-        <section>
-            <h4>Signature and date</h4>
-            <div class="form-group">
-                <label asp-for="Signature" class="control-label"></label>
-                <input asp-for="Signature" class="form-control" />
-                <span asp-validation-for="Signature" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AdmissionDate" class="control-label"></label>
-                <input asp-for="AdmissionDate" class="form-control" />
-                <span asp-validation-for="AdmissionDate" class="text-danger"></span>
-            </div>
-        </section>
         <div class="form-group">
-           <center> <input type="submit" value="Save and Complete" class="btn btn-secondary" /></center>
+            <center>
+                <input type="submit" value="Save and Continue" class="btn btn-secondary" /></br>
+            </center>
         </div>
+
     </form>
 </main>

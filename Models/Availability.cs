@@ -6,7 +6,7 @@ namespace ArafaEmploymentApp.Models
 {
     public class Availability
     {
-        [Display(Name = "Days available to work")]
+        [Display(Name = "List the days you are available to work")]
         public string DaysAvailable { get; set; }
 
         [Display(Name = "Employment Desired (Full-time, Part-time)")]
@@ -15,7 +15,7 @@ namespace ArafaEmploymentApp.Models
         [Display(Name = "Hours weekly able to work")]
         public int HoursAvailable { get; set; }
 
-        [Display(Name = "Work Nights?")]
+        [Display(Name = "Check if available to work nights")]
         public bool WorkNights { get; set; }
 
         [Required(ErrorMessage = "Please choose date.")]
