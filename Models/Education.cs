@@ -27,7 +27,7 @@ namespace ArafaEmploymentApp.Models
         public DateTime? GraduationDate { get; set; }
 
         [Display(Name = "School State")]
-        [Required(ErrorMessage = "Must provide an answer, if none type 'none' ")]
+        [Required(ErrorMessage = "Must provide an answer, if none select 'none' ")]
         public string SchoolState { get; set;}
     }
 }
