@@ -15,6 +15,7 @@ namespace ArafaEmploymentApp.Models
 
         [Display(Name = "Phone")]
         [Phone]
+        [StringLength(10, MinimumLength = 10, ErrorMessage = "Incorrect length")]
         public string ReferencePhoneNumber { get; set; }
 
 

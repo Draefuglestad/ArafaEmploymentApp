@@ -7,43 +7,45 @@ namespace ArafaEmploymentApp.Models
     public class Applicant
     {
         [Display(Name = "First Name")]
-        [Required(ErrorMessage = "Please enter first name")]
+        [Required(ErrorMessage = "First name cannot be blank")]
         public string FirstName { get; set; }
 
         [Display(Name = "Middle Name")]
         public string MiddleName { get; set; }
 
         [Display(Name = "Last Name")]
-        [Required(ErrorMessage = "Please enter last name")]
+        [Required(ErrorMessage = "Last Name cannot be blank")]
         public string LastName { get; set; }
 
         [Display(Name = "Address")]
-        [Required(ErrorMessage = "Please enter street address")]
+        [Required(ErrorMessage = "Street address cannot be blank")]
         public string AddressStreet { get; set; } //changed address types to multiple fields
 
         [Display(Name = "City")]
-        [Required(ErrorMessage = "Please enter address city")]
+        [Required(ErrorMessage = "City address cannot be blank")]
         public string AddressCity { get; set; }
 
         [Display(Name = "State")]
-        [Required(ErrorMessage = "Please enter address state")]
+        [Required(ErrorMessage = "State address cannot be blank")]
         public string AddressState { get; set; }
 
         [Display(Name = "Zip")]
-        [Required(ErrorMessage = "Please enter address zip code")]
+        [Required(ErrorMessage = "Address zip code cannot be blank")]
         public string AddressZip { get; set; }
 
         [Display(Name = "Years lived at address")]
         [Required(ErrorMessage = "Please enter years lived at address")]
         public int AddressYears { get; set; }
 
-        [Display(Name = "Social Security Number")]
-        [Required(ErrorMessage = "Please enter social security number")]
+        [Display(Name = "Social Security Number (digits only)")]
+        [Required(ErrorMessage ="Social security number cannot be blank")]
+        [StringLength(9, MinimumLength = 9, ErrorMessage = "Incorrect length")]
         public string SSN { get; set; }
 
-        [Display(Name = "Phone Number")]
+        [Display(Name = "Phone number with Area Code (digits only)")]
         [Phone]
         [Required(ErrorMessage = "Please enter a phone number")]
+        [StringLength(10, MinimumLength = 10, ErrorMessage = "Incorrect length")]
         public string PhoneNumber { get; set; }
 
         [Display(Name = "Date of Birth")]
