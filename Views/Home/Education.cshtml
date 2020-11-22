@@ -1,16 +1,17 @@
 ﻿@model ArafaEmploymentApp.Models.Education
 
 @{
-    ViewData["Title"] = "Form";
+    ViewData["Title"] = "Education";
 }
 
 <main class="container">
     <form asp-action="Education">
-        <div class="form-group">
-            <label asp-for="AdditionalEducation" class="control-label"></label>
-            <input asp-for="AdditionalEducation" class="form-control" />
-            <span asp-validation-for="AdditionalEducation" class="text-danger"></span>
-        </div>
+        </br><button type="button" id="sidebarCollapse" class="btn btn-secondary" onclick="toggleSidebar()">
+            <i class="fas fa-align-left"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+
+        <section class="header"><h3>Education</h3></section><hr />
         <div class="form-row">
             <div class="form-group col-6">
                 <label asp-for="SchoolName" class="control-label"></label>
@@ -92,11 +93,17 @@
         </div>
 
         <div class="form-group">
-            <input type="submit" value="Save and Continue" class="btn btn-primary" />
+            <label asp-for="AdditionalEducation" class="control-label"></label>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" asp-for="AdditionalEducation" rows="7"></textarea>
+        </div>
+
+        <div class="form-group">
+            <center>
+                <input type="submit" value="Save and Continue" class="btn btn-secondary" /></br>
+            </center>
         </div>
     </form>
 </main>
 
-<div class="form-group">
-    <a asp-action="Index">Exit Application</a>
-</div>
