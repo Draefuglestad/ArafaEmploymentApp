@@ -17,13 +17,12 @@ namespace ArafaEmploymentApp.Models
         [Required(ErrorMessage = "Must provide an answer, if none type 'none' ")]
         public string HighestEducationEarned { get; set;}
 
-        [Display(Name = "School Name")]
+        [Display(Name = "Current School Name")]
         [Required(ErrorMessage = "Must provide an answer, if none type 'none' ")]
         public string SchoolName { get; set; }
 
-        [Display(Name = "Graduation Date")]
+        [Display(Name = "High School Graduation Date (if applicable)")]
         [DataType(DataType.Date)]
-        [Required(ErrorMessage = "Must provide an answer")]
         public DateTime? GraduationDate { get; set; }
 
         [Display(Name = "School State")]

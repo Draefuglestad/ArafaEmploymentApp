@@ -21,11 +21,11 @@
                 <input asp-for="SchoolName" class="form-control" />
                 <span asp-validation-for="SchoolName" class="text-danger"></span>
             </div>
-            <div class="form-row">
-                <div class="form-group col-4">
+                <div class="form-group col-6">
                     <label asp-for="SchoolState" class="control-label"></label>
                     <select asp-for="SchoolState" class="form-control">
-                        <option value="AL">none</option>
+                        <option value="AL">Select a State</option>
+                        <option value="AL">None</option>
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -103,7 +103,6 @@
                     <span asp-validation-for="GraduationDate" class="text-danger"></span>
                 </div>
             </div>
-        </div>
         <div class="form-group">
             <label asp-for="AdditionalEducation" class="control-label"></label>
         </div>
@@ -111,7 +110,6 @@
             <textarea class="form-control" asp-for="AdditionalEducation" rows="7"></textarea>
             <span asp-validation-for="AdditionalEducation" class="text-danger"></span>
         </div>
-
         <div class="form-group">
             <center>
                 <input type="submit" value="Save and Continue" class="btn btn-secondary" /></br>

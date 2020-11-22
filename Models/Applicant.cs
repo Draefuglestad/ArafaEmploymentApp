@@ -122,7 +122,8 @@ namespace ArafaEmploymentApp.Models
         [Display(Name = "Do you have a driver's license?")]
         public bool DriversLicense { get; set; }
 
-        [Display(Name = "Driver's license #")]
+        [Display(Name = "Driver's license number")]
+        [StringLength(13, MinimumLength = 13, ErrorMessage = "Incorrect length")]
         public string DLNum { get; set; }
 
         [Display(Name = "Driver's license Issue State")]
