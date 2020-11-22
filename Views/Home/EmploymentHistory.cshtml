@@ -9,10 +9,13 @@
     <span>Toggle Sidebar</span>
 </button>
 
-<section class="header"><h3>Employment History</h3></section>
+<section class="header">
+    <h3>Employment History</h3>
+</section>
 <hr />
 <main class="container">
-    <button type="button" id="employerAddButton" onclick="duplicateEmployer()" style="float: right">Add an employer</button>
+    <button type="button" id="employerAddButton" onclick="duplicateEmployer()" style="float: right">Add an
+        employer</button>
     <form asp-action="EmploymentHistory">
         <h5>Most Recent Employer</h5>
         <div id="employer">
@@ -131,7 +134,8 @@
 
         <div class="form-group form-check">
             <label class="form-check-label">
-                <input class="form-check-input" asp-for="FiredBefore" /> @Html.DisplayNameFor(model => model.FiredBefore)
+                <input class="form-check-input" asp-for="FiredBefore" /> @Html.DisplayNameFor(model =>
+                                                                            model.FiredBefore)
             </label>
         </div>
 
@@ -141,19 +145,19 @@
                 <div class="form-group col-md-4">
                     <label asp-for="WorkMissedPastMonth" class="control-label"></label>
                     <input asp-for="WorkMissedPastMonth" class="form-control" min="0"
-                           oninput="this.value = Math.abs(this.value)" />
+                        oninput="this.value = Math.abs(this.value)" />
                     <span asp-validation-for="WorkMissedPastMonth" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-4">
                     <label asp-for="WorkMissedPastSixMonths" class="control-label"></label>
                     <input asp-for="WorkMissedPastSixMonths" class="form-control" min="0"
-                           oninput="this.value = Math.abs(this.value)" />
+                        oninput="this.value = Math.abs(this.value)" />
                     <span asp-validation-for="WorkMissedPastSixMonths" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-4">
                     <label asp-for="WorkMissedPastYear" class="control-label"></label>
                     <input asp-for="WorkMissedPastYear" class="form-control" min="0"
-                           oninput="this.value = Math.abs(this.value)" />
+                        oninput="this.value = Math.abs(this.value)" />
                     <span asp-validation-for="WorkMissedPastYear" class="text-danger"></span>
                 </div>
             </div>
@@ -164,7 +168,11 @@
                 <span asp-validation-for="AdditionalSkills" class="text-danger"></span>
             </div>
         </section>
-
+            <div class="form-group">
+                <label asp-for="ContactEmployer" class="control-label"></label>
+                <input asp-for="ContactEmployer" class="form-control" />
+                <span asp-validation-for="ContactEmployer" class="text-danger"></span>
+            </div>
         <div class="form-group">
             <center>
                 <input type="submit" value="Save and Continue" class="btn btn-secondary" /></br>
@@ -172,4 +180,3 @@
         </div>
     </form>
 </main>
-

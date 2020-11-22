@@ -11,7 +11,10 @@
             <span>Toggle Sidebar</span>
         </button>
 
-        <section class="header"><h3>Education</h3></section><hr />
+        <section class="header">
+            <h3>Education</h3>
+        </section>
+        <hr />
         <div class="form-group">
             <label asp-for="AdditionalEducation" class="control-label"></label>
             <input asp-for="AdditionalEducation" class="form-control" />
@@ -21,31 +24,38 @@
             <div class="form-group col-6">
                 <label asp-for="SchoolName" class="control-label"></label>
                 <input asp-for="SchoolName" class="form-control" />
+                <span asp-validation-for="SchoolName" class="text-danger"></span>
             </div>
             <div class="form-row">
                 <div class="form-group col-6">
                     <label asp-for="SchoolState" class="control-label"></label>
                     <input asp-for="SchoolState" class="form-control" />
+                    <span asp-validation-for="SchoolState" class="text-danger"></span>
                 </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-6">
-                <label asp-for="HighestEducationEarned" class="control-label"></label>
-                <select asp-for="HighestEducationEarned" class="form-control">
-                    <option value="HighSchool">High School</option>
-                    <option value="GED">GED</option>
-                    <option value="Assoc">Associates</option>
-                    <option value="Bach">Bachelors</option>
-                    <option value="MS">Masters</option>
-                    <option value="PHD">Post Doc</option>
-                </select>
             </div>
-            <div class="form-group col-6">
-                <label asp-for="GraduationDate" class="control-label"></label>
-                <input asp-for="GraduationDate" class="form-control" />
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label asp-for="HighestEducationEarned" class="control-label"></label>
+                    <select asp-for="HighestEducationEarned" class="form-control">
+                        <option value="none">none</option>
+                        <option value="Pre-highschool">Pre-Highschool</option>
+                        <option value="HighSchool">High School</option>
+                        <option value="GED">GED</option>
+                        <option value="Assoc">Associates</option>
+                        <option value="Bach">Bachelors</option>
+                        <option value="MS">Masters</option>
+                        <option value="PHD">Post Doc</option>
+                    </select>
+                    <span asp-validation-for="HighestEducationEarned" class="text-danger"></span>
+                </div>
+                <br>
+                <div class="form-group col-6">
+                    <label asp-for="GraduationDate" class="control-label"></label>
+                    <input asp-for="GraduationDate" class="form-control" />
+                    <span asp-validation-for="GraduationDate" class="text-danger"></span>
+                </div>
             </div>
         </div>
-
         <div class="form-group">
             <center>
                 <input type="submit" value="Save and Continue" class="btn btn-secondary" /></br>
