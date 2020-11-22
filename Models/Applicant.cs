@@ -37,11 +37,11 @@ namespace ArafaEmploymentApp.Models
         [Required(ErrorMessage = "Please enter years lived at address")]
         public int AddressYears { get; set; }
 
-        [Display(Name = "Social Security")]
+        [Display(Name = "Social Security Number")]
         [Required(ErrorMessage = "Please enter social security number")]
         public string SSN { get; set; }
 
-        [Display(Name = "Phone")]
+        [Display(Name = "Phone Number")]
         [Phone]
         [Required(ErrorMessage = "Please enter a phone number")]
         public string PhoneNumber { get; set; }
@@ -53,7 +53,7 @@ namespace ArafaEmploymentApp.Models
         public DateTime DateofBirth { get; set; }//changed legal age from boolean to date type with age validation
 
         [Display(Name = "Position applying for")]
-        [Required(ErrorMessage = "Please enter position applied for")]
+        [Required(ErrorMessage = "Please enter the position you wish to apply for")]
         public string PositionApplied { get; set; }
 
         [Display(Name = "Email address")]
@@ -111,7 +111,7 @@ namespace ArafaEmploymentApp.Models
         [Display(Name = "Do you currently own a vehicle?")]
         public bool OwnVehicle { get; set; }
 
-        [Display(Name = "Willing to Drive a personal vehicle?")]
+        [Display(Name = "Are you willing to drive your personal vehicle to work?")]
         public bool PersonalVehicle { get; set; }
                 
         [Display(Name = "Make/Model/Year")]
