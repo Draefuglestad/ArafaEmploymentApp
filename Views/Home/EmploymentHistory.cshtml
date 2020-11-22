@@ -160,7 +160,9 @@
 
             <div class="form-group">
                 <label asp-for="AdditionalSkills" class="control-label"></label>
-                <input asp-for="AdditionalSkills" class="form-control" />
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" asp-for="AdditionalSkills" rows="7"></textarea>
                 <span asp-validation-for="AdditionalSkills" class="text-danger"></span>
             </div>
         </section>
