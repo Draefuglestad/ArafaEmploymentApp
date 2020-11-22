@@ -42,6 +42,7 @@ namespace ArafaEmploymentApp.Models
         public bool ContactEmployer { get; set; }
 
         [Display(Name = "Duties Performed, Skills Used, etc")]
+        [Required(ErrorMessage = "Please describe duties performed ")]
         public string Tasks { get; set; }
 
         // JOE: Not sure where this was supposed to be placed?

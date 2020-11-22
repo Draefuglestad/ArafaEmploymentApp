@@ -128,6 +128,11 @@
                     <input asp-for="EmploymentDateTo" class="form-control" />
                     <span asp-validation-for="EmploymentDateTo" class="text-danger"></span>
                 </div>
+                <div class="form-group col-6">
+                    <label asp-for="Tasks" class="control-label"></label>
+                    <input asp-for="Tasks" class="form-control" />
+                    <span asp-validation-for="Tasks" class="text-danger"></span>
+                </div>
             </div>
             <hr />
         </div>
@@ -169,12 +174,13 @@
                 <textarea class="form-control" asp-for="AdditionalSkills" rows="7"></textarea>
                 <span asp-validation-for="AdditionalSkills" class="text-danger"></span>
             </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="ContactEmployer" /> @Html.DisplayNameFor(model =>
+                                                                            model.ContactEmployer)
+            </label>
+        </div>
         </section>
-            <div class="form-group">
-                <label asp-for="ContactEmployer" class="control-label"></label>
-                <input asp-for="ContactEmployer" class="form-control" />
-                <span asp-validation-for="ContactEmployer" class="text-danger"></span>
-            </div>
         <div class="form-group">
             <center>
                 <input type="submit" value="Save and Continue" class="btn btn-secondary" /></br>
