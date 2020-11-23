@@ -31,19 +31,25 @@
                         </div>
                         <div class="form-group col">
                             <label asp-for="YearServed" class="control-label"></label>
-                            <input asp-for="YearServed" class="form-control" />
+                            <input asp-for="YearServed"
+                                   oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"
+                                   class="form-control" />
                             <span asp-validation-for="YearServed" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
                             <label asp-for="TrafficAccident" class="control-label"></label>
-                            <input asp-for="TrafficAccident" class="form-control" />
+                            <input asp-for="TrafficAccident"
+                                   oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"
+                                   class="form-control" />
                             <span asp-validation-for="TrafficAccident" class="text-danger"></span>
                         </div>
                         <div class="form-group col">
                             <label asp-for="TrafficViolation" class="control-label"></label>
-                            <input asp-for="TrafficViolation" class="form-control" />
+                            <input asp-for="TrafficViolation"
+                                   oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null"
+                                   class="form-control" />
                             <span asp-validation-for="TrafficViolation" class="text-danger"></span>
                         </div>
                     </div>
@@ -64,7 +70,9 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="CrimeType" class="control-label"></label>
-                        <input asp-for="CrimeType" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" asp-for="CrimeType" rows="7"></textarea>
                         <span asp-validation-for="CrimeType" class="text-danger"></span>
                     </div>
                     <div class="form-group">
