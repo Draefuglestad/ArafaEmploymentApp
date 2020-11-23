@@ -137,6 +137,8 @@ namespace ArafaEmploymentApp.Models
         //[DataType(DataType.Date)]
         //public DateTime DLExpireDate { get; set; } see view page
 
+        [Display(Name = "Please list any medical conditions that you have been dignosed with that can affect your ability to work.")]
+        public string MedicalHistory { get; set; }
 
         //[Display(Name = "Have any children?")]
         //public bool HasChildren { get; set; } see view page

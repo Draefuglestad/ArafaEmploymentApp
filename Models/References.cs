@@ -21,7 +21,9 @@ namespace ArafaEmploymentApp.Models
         //[Required(ErrorMessage = "Must enter a reference number")]
         public string ReferencePhoneNumber { get; set; }
 
+        public References Reference2 { get; set; }
 
+        public References Reference3 { get; set; }
 
     }
 }

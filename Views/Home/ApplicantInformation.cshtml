@@ -300,6 +300,13 @@
                     </div>
                 </div>
             </div>
+            <div class="form-group">
+                <label asp-for="MedicalHistory" class="control-label"></label>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="FAILURE TO DISCLOSE DEBILITATING CONDITIONS IS GROUNDS FOR IMMEDIATE TERMINATION OF EMPLOYMENT" class="form-control" asp-for="MedicalHistory" rows="7"></textarea>
+                <span asp-validation-for="MedicalHistory" class="text-danger"></span>
+            </div>
             <div class="form-group form-check">
                 <label class="form-check-label" asp-for="LostHealthInsurance">
                     <input class="form-check-input" asp-for="LostHealthInsurance" /> @Html.DisplayNameFor(model => model.LostHealthInsurance)

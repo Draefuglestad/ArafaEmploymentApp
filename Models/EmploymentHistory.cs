@@ -67,5 +67,10 @@ namespace ArafaEmploymentApp.Models
         [Display(Name = "Employment end date:")]
         [DataType(DataType.Date)]
         public DateTime? EmploymentDateTo { get; set; }
+
+        public EmploymentHistory Employer2 { get; set; }
+
+        public EmploymentHistory Employer3 { get; set; }
+
     }
 }
