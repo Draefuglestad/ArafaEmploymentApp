@@ -13,6 +13,7 @@
                     </button>
 
                     <section class="header"><h3>Background</h3></section><hr />
+                    <b>**Fields in Bold are Required**</b></br>
                     <div class="form-group form-check">
                         <label class="form-check-label">
                             <input class="form-check-input" asp-for="MilitaryService" /> @Html.DisplayNameFor(model => model.MilitaryService)
@@ -30,19 +31,19 @@
                             <span asp-validation-for="MilitaryBranch" class="text-danger"></span>
                         </div>
                         <div class="form-group col">
-                            <label asp-for="YearServed" class="control-label"></label>
+                           <b> <label asp-for="YearServed" class="control-label"></label></b>
                             <input asp-for="YearServed" class="form-control" />
                             <span asp-validation-for="YearServed" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
-                            <label asp-for="TrafficAccident" class="control-label"></label>
+                           <b> <label asp-for="TrafficAccident" class="control-label"></label></b>
                             <input asp-for="TrafficAccident" class="form-control" />
                             <span asp-validation-for="TrafficAccident" class="text-danger"></span>
                         </div>
                         <div class="form-group col">
-                            <label asp-for="TrafficViolation" class="control-label"></label>
+                            <b><label asp-for="TrafficViolation" class="control-label"></label></b>
                             <input asp-for="TrafficViolation" class="form-control" />
                             <span asp-validation-for="TrafficViolation" class="text-danger"></span>
                         </div>

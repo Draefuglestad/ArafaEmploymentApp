@@ -13,394 +13,38 @@
     <h3>Employment History</h3>
 </section>
 <hr />
+<b>**Fields in Bold are Required**</b></br>
 <main class="container">
-    <button type="button" id="employerAddButton" onclick="addEmployer()" style="float: right">Add an
-        employer</button>
     <form asp-action="EmploymentHistory">
-        <h5>Most Recent Employer</h5>
-        <div id="employer">
-            <div class="form-group">
-                <label asp-for="EmployerName" class="control-label"></label>
-                <input asp-for="EmployerName" class="form-control" />
-                <span asp-validation-for="EmployerName" class="text-danger"></span>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-4">
-                    <label asp-for="EmployerCity" class="control-label"></label>
-                    <input asp-for="EmployerCity" class="form-control" />
-                    <span asp-validation-for="EmployerCity" class="text-danger"></span>
-                </div>
-                <div class="form-group col-4">
-                    <label asp-for="EmployerState" class="control-label"></label>
-                    <select asp-for="EmployerState" class="form-control">
-                        <option value="AL">Alabama</option>
-                        <option value="AK">Alaska</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="CA">California</option>
-                        <option value="CO">Colorado</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="DC">District Of Columbia</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="ID">Idaho</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IN">Indiana</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="MT">Montana</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NV">Nevada</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="OH">Ohio</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="OR">Oregon</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="TX">Texas</option>
-                        <option value="UT">Utah</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WA">Washington</option>
-                        <option value="WV">West Virginia</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="WY">Wyoming</option>
-                    </select>
-                    <span asp-validation-for="EmployerState" class="text-danger"></span>
-                </div>
-                <div class="form-group col-4">
-                    <label asp-for="EmployerZip" class="control-label"></label>
-                    <input asp-for="EmployerZip" class="form-control" />
-                    <span asp-validation-for="EmployerZip" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-6">
-                    <label asp-for="EmployerNumber" class="control-label"></label>
-                    <input asp-for="EmployerNumber" class="form-control" />
-                    <span asp-validation-for="EmployerNumber" class="text-danger"></span>
-                </div>
-                <div class="form-group col-6">
-                    <label asp-for="EmployerEmail" class="control-label"></label>
-                    <input asp-for="EmployerEmail" class="form-control" />
-                    <span asp-validation-for="EmployerEmail" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-6">
-                    <label asp-for="SupervisorName" class="control-label"></label>
-                    <input asp-for="SupervisorName" class="form-control" />
-                    <span asp-validation-for="SupervisorName" class="text-danger"></span>
-                </div>
-                <div class="form-group col-6">
-                    <label asp-for="JobTitle" class="control-label"></label>
-                    <input asp-for="JobTitle" class="form-control" />
-                    <span asp-validation-for="JobTitle" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-6">
-                    <label asp-for="EmploymentDateFrom" class="control-label"></label>
-                    <input asp-for="EmploymentDateFrom" class="form-control" />
-                    <span asp-validation-for="EmploymentDateFrom" class="text-danger"></span>
-                </div>
-                <div class="form-group col-6">
-                    <label asp-for="EmploymentDateTo" class="control-label"></label>
-                    <input asp-for="EmploymentDateTo" class="form-control" />
-                    <span asp-validation-for="EmploymentDateTo" class="text-danger"></span>
-                </div>
-                <div class="form-group col-6">
-                    <label asp-for="Tasks" class="control-label"></label>
-                    <input asp-for="Tasks" class="form-control" />
-                    <span asp-validation-for="Tasks" class="text-danger"></span>
-                </div>
-            </div>
-            <hr />
-        </div>
-        <div id="employer2" style="display: none">
-            <div class="form-group">
-                <label asp-for="Employer2.EmployerName" class="control-label"></label>
-                <input id="employer2FN" asp-for="Employer2.EmployerName" class="form-control" />
-                <span asp-validation-for="Employer2.EmployerName" class="text-danger"></span>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-4">
-                    <label asp-for="Employer2.EmployerCity" class="control-label"></label>
-                    <input asp-for="Employer2.EmployerCity" class="form-control" />
-                    <span asp-validation-for="Employer2.EmployerCity" class="text-danger"></span>
-                </div>
-                <div class="form-group col-4">
-                    <label asp-for="Employer2.EmployerState" class="control-label"></label>
-                    <select asp-for="Employer2.EmployerState" class="form-control">
-                        <option value="AL">Alabama</option>
-                        <option value="AK">Alaska</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="CA">California</option>
-                        <option value="CO">Colorado</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="DC">District Of Columbia</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="ID">Idaho</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IN">Indiana</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="MT">Montana</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NV">Nevada</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="OH">Ohio</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="OR">Oregon</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="TX">Texas</option>
-                        <option value="UT">Utah</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WA">Washington</option>
-                        <option value="WV">West Virginia</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="WY">Wyoming</option>
-                    </select>
-                    <span asp-validation-for="Employer2.EmployerState" class="text-danger"></span>
-                </div>
-                <div class="form-group col-4">
-                    <label asp-for="Employer2.EmployerZip" class="control-label"></label>
-                    <input asp-for="Employer2.EmployerZip" class="form-control" />
-                    <span asp-validation-for="Employer2.EmployerZip" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-6">
-                    <label asp-for="Employer2.EmployerNumber" class="control-label"></label>
-                    <input asp-for="Employer2.EmployerNumber" class="form-control" />
-                    <span asp-validation-for="Employer2.EmployerNumber" class="text-danger"></span>
-                </div>
-                <div class="form-group col-6">
-                    <label asp-for="Employer2.EmployerEmail" class="control-label"></label>
-                    <input asp-for="Employer2.EmployerEmail" class="form-control" />
-                    <span asp-validation-for="Employer2.EmployerEmail" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-6">
-                    <label asp-for="Employer2.SupervisorName" class="control-label"></label>
-                    <input asp-for="Employer2.SupervisorName" class="form-control" />
-                    <span asp-validation-for="Employer2.SupervisorName" class="text-danger"></span>
-                </div>
-                <div class="form-group col-6">
-                    <label asp-for="Employer2.JobTitle" class="control-label"></label>
-                    <input asp-for="Employer2.JobTitle" class="form-control" />
-                    <span asp-validation-for="Employer2.JobTitle" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-6">
-                    <label asp-for="Employer2.EmploymentDateFrom" class="control-label"></label>
-                    <input asp-for="Employer2.EmploymentDateFrom" class="form-control" />
-                    <span asp-validation-for="Employer2.EmploymentDateFrom" class="text-danger"></span>
-                </div>
-                <div class="form-group col-6">
-                    <label asp-for="Employer2.EmploymentDateTo" class="control-label"></label>
-                    <input asp-for="Employer2.EmploymentDateTo" class="form-control" />
-                    <span asp-validation-for="Employer2.EmploymentDateTo" class="text-danger"></span>
-                </div>
-                <div class="form-group col-6">
-                    <label asp-for="Employer2.Tasks" class="control-label"></label>
-                    <input asp-for="Employer2.Tasks" class="form-control" />
-                    <span asp-validation-for="Employer2.Tasks" class="text-danger"></span>
-                </div>
-            </div>
-            <hr />
-        </div>
-        <div id="employer3" style="display: none">
-            <div class="form-group">
-                <label asp-for="Employer3.EmployerName" class="control-label"></label>
-                <input id="employer3FN" asp-for="Employer3.EmployerName" class="form-control" />
-                <span asp-validation-for="Employer3.EmployerName" class="text-danger"></span>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-4">
-                    <label asp-for="Employer3.EmployerCity" class="control-label"></label>
-                    <input asp-for="Employer3.EmployerCity" class="form-control" />
-                    <span asp-validation-for="Employer3.EmployerCity" class="text-danger"></span>
-                </div>
-                <div class="form-group col-4">
-                    <label asp-for="Employer3.EmployerState" class="control-label"></label>
-                    <select asp-for="Employer3.EmployerState" class="form-control">
-                        <option value="AL">Alabama</option>
-                        <option value="AK">Alaska</option>
-                        <option value="AZ">Arizona</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="CA">California</option>
-                        <option value="CO">Colorado</option>
-                        <option value="CT">Connecticut</option>
-                        <option value="DE">Delaware</option>
-                        <option value="DC">District Of Columbia</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="HI">Hawaii</option>
-                        <option value="ID">Idaho</option>
-                        <option value="IL">Illinois</option>
-                        <option value="IN">Indiana</option>
-                        <option value="IA">Iowa</option>
-                        <option value="KS">Kansas</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="ME">Maine</option>
-                        <option value="MD">Maryland</option>
-                        <option value="MA">Massachusetts</option>
-                        <option value="MI">Michigan</option>
-                        <option value="MN">Minnesota</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="MT">Montana</option>
-                        <option value="NE">Nebraska</option>
-                        <option value="NV">Nevada</option>
-                        <option value="NH">New Hampshire</option>
-                        <option value="NJ">New Jersey</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="NY">New York</option>
-                        <option value="NC">North Carolina</option>
-                        <option value="ND">North Dakota</option>
-                        <option value="OH">Ohio</option>
-                        <option value="OK">Oklahoma</option>
-                        <option value="OR">Oregon</option>
-                        <option value="PA">Pennsylvania</option>
-                        <option value="RI">Rhode Island</option>
-                        <option value="SC">South Carolina</option>
-                        <option value="SD">South Dakota</option>
-                        <option value="TN">Tennessee</option>
-                        <option value="TX">Texas</option>
-                        <option value="UT">Utah</option>
-                        <option value="VT">Vermont</option>
-                        <option value="VA">Virginia</option>
-                        <option value="WA">Washington</option>
-                        <option value="WV">West Virginia</option>
-                        <option value="WI">Wisconsin</option>
-                        <option value="WY">Wyoming</option>
-                    </select>
-                    <span asp-validation-for="Employer3.EmployerState" class="text-danger"></span>
-                </div>
-                <div class="form-group col-4">
-                    <label asp-for="Employer3.EmployerZip" class="control-label"></label>
-                    <input asp-for="Employer3.EmployerZip" class="form-control" />
-                    <span asp-validation-for="Employer3.EmployerZip" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-6">
-                    <label asp-for="Employer3.EmployerNumber" class="control-label"></label>
-                    <input asp-for="Employer3.EmployerNumber" class="form-control" />
-                    <span asp-validation-for="Employer3.EmployerNumber" class="text-danger"></span>
-                </div>
-                <div class="form-group col-6">
-                    <label asp-for="Employer3.EmployerEmail" class="control-label"></label>
-                    <input asp-for="Employer3.EmployerEmail" class="form-control" />
-                    <span asp-validation-for="Employer3.EmployerEmail" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-6">
-                    <label asp-for="Employer3.SupervisorName" class="control-label"></label>
-                    <input asp-for="Employer3.SupervisorName" class="form-control" />
-                    <span asp-validation-for="Employer3.SupervisorName" class="text-danger"></span>
-                </div>
-                <div class="form-group col-6">
-                    <label asp-for="Employer3.JobTitle" class="control-label"></label>
-                    <input asp-for="Employer3.JobTitle" class="form-control" />
-                    <span asp-validation-for="Employer3.JobTitle" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-6">
-                    <label asp-for="Employer3.EmploymentDateFrom" class="control-label"></label>
-                    <input asp-for="Employer3.EmploymentDateFrom" class="form-control" />
-                    <span asp-validation-for="Employer3.EmploymentDateFrom" class="text-danger"></span>
-                </div>
-                <div class="form-group col-6">
-                    <label asp-for="Employer3.EmploymentDateTo" class="control-label"></label>
-                    <input asp-for="Employer3.EmploymentDateTo" class="form-control" />
-                    <span asp-validation-for="Employer3.EmploymentDateTo" class="text-danger"></span>
-                </div>
-                <div class="form-group col-6">
-                    <label asp-for="Employer3.Tasks" class="control-label"></label>
-                    <input asp-for="Employer3.Tasks" class="form-control" />
-                    <span asp-validation-for="Employer3.Tasks" class="text-danger"></span>
-                </div>
-            </div>
-            <hr />
-        </div>
 
-        <div class="form-group form-check">
-            <label class="form-check-label">
-                <input class="form-check-input" asp-for="FiredBefore" /> @Html.DisplayNameFor(model =>
-model.FiredBefore)
-            </label>
-        </div>
 
         <section>
-            <h5>Days of Work Missed Due to Child Illness/Out of School?</h5>
+            <h6>Enter days of Work Missed Due to Illness or School For the Following time Periods. If none apply, enter 0.</h6>
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label asp-for="WorkMissedPastMonth" class="control-label"></label>
+                    <b><label asp-for="WorkMissedPastMonth" class="control-label">Past month</label></b>
                     <input asp-for="WorkMissedPastMonth" class="form-control" min="0"
                            oninput="this.value = Math.abs(this.value)" />
                     <span asp-validation-for="WorkMissedPastMonth" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-4">
-                    <label asp-for="WorkMissedPastSixMonths" class="control-label"></label>
+                    <b><label asp-for="WorkMissedPastSixMonths" class="control-label">Past six months</label></b>
                     <input asp-for="WorkMissedPastSixMonths" class="form-control" min="0"
                            oninput="this.value = Math.abs(this.value)" />
                     <span asp-validation-for="WorkMissedPastSixMonths" class="text-danger"></span>
                 </div>
                 <div class="form-group col-md-4">
-                    <label asp-for="WorkMissedPastYear" class="control-label"></label>
+                    <b> <label asp-for="WorkMissedPastYear" class="control-label">Past year</label></b>
                     <input asp-for="WorkMissedPastYear" class="form-control" min="0"
                            oninput="this.value = Math.abs(this.value)" />
                     <span asp-validation-for="WorkMissedPastYear" class="text-danger"></span>
                 </div>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="FiredBefore" /> @Html.DisplayNameFor(model =>
+model.FiredBefore)
+                </label>
             </div>
 
             <div class="form-group">
@@ -410,6 +54,366 @@ model.FiredBefore)
                 <textarea class="form-control" asp-for="AdditionalSkills" rows="7"></textarea>
                 <span asp-validation-for="AdditionalSkills" class="text-danger"></span>
             </div>
+
+            <button type="button" id="employerAddButton" onclick="addEmployer()" style="float: right">
+                Select to Add an Employer
+            </button>
+
+            <h5>Most Recent Employer</h5>
+            <div id="employer">
+                <div class="form-group">
+                    <label asp-for="EmployerName" class="control-label"></label>
+                    <input asp-for="EmployerName" class="form-control" />
+                    <span asp-validation-for="EmployerName" class="text-danger"></span>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-4">
+                        <label asp-for="EmployerCity" class="control-label"></label>
+                        <input asp-for="EmployerCity" class="form-control" />
+                        <span asp-validation-for="EmployerCity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-4">
+                        <label asp-for="EmployerState" class="control-label"></label>
+                        <select asp-for="EmployerState" class="form-control">
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                        <span asp-validation-for="EmployerState" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-4">
+                        <label asp-for="EmployerZip" class="control-label"></label>
+                        <input asp-for="EmployerZip" class="form-control" />
+                        <span asp-validation-for="EmployerZip" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label asp-for="EmployerNumber" class="control-label"></label>
+                        <input asp-for="EmployerNumber" class="form-control" />
+                        <span asp-validation-for="EmployerNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="EmployerEmail" class="control-label"></label>
+                        <input asp-for="EmployerEmail" class="form-control" />
+                        <span asp-validation-for="EmployerEmail" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label asp-for="SupervisorName" class="control-label"></label>
+                        <input asp-for="SupervisorName" class="form-control" />
+                        <span asp-validation-for="SupervisorName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="JobTitle" class="control-label"></label>
+                        <input asp-for="JobTitle" class="form-control" />
+                        <span asp-validation-for="JobTitle" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label asp-for="EmploymentDateFrom" class="control-label"></label>
+                        <input asp-for="EmploymentDateFrom" class="form-control" />
+                        <span asp-validation-for="EmploymentDateFrom" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="EmploymentDateTo" class="control-label"></label>
+                        <input asp-for="EmploymentDateTo" class="form-control" />
+                        <span asp-validation-for="EmploymentDateTo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="Tasks" class="control-label"></label>
+                        <input asp-for="Tasks" class="form-control" />
+                        <span asp-validation-for="Tasks" class="text-danger"></span>
+                    </div>
+                </div>
+                <hr />
+            </div>
+            <div id="employer2" style="display: none">
+                <div class="form-group">
+                    <label asp-for="Employer2.EmployerName" class="control-label"></label>
+                    <input id="employer2FN" asp-for="Employer2.EmployerName" class="form-control" />
+                    <span asp-validation-for="Employer2.EmployerName" class="text-danger"></span>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-4">
+                        <label asp-for="Employer2.EmployerCity" class="control-label"></label>
+                        <input asp-for="Employer2.EmployerCity" class="form-control" />
+                        <span asp-validation-for="Employer2.EmployerCity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-4">
+                        <label asp-for="Employer2.EmployerState" class="control-label"></label>
+                        <select asp-for="Employer2.EmployerState" class="form-control">
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                        <span asp-validation-for="Employer2.EmployerState" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-4">
+                        <label asp-for="Employer2.EmployerZip" class="control-label"></label>
+                        <input asp-for="Employer2.EmployerZip" class="form-control" />
+                        <span asp-validation-for="Employer2.EmployerZip" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label asp-for="Employer2.EmployerNumber" class="control-label"></label>
+                        <input asp-for="Employer2.EmployerNumber" class="form-control" />
+                        <span asp-validation-for="Employer2.EmployerNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="Employer2.EmployerEmail" class="control-label"></label>
+                        <input asp-for="Employer2.EmployerEmail" class="form-control" />
+                        <span asp-validation-for="Employer2.EmployerEmail" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label asp-for="Employer2.SupervisorName" class="control-label"></label>
+                        <input asp-for="Employer2.SupervisorName" class="form-control" />
+                        <span asp-validation-for="Employer2.SupervisorName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="Employer2.JobTitle" class="control-label"></label>
+                        <input asp-for="Employer2.JobTitle" class="form-control" />
+                        <span asp-validation-for="Employer2.JobTitle" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label asp-for="Employer2.EmploymentDateFrom" class="control-label"></label>
+                        <input asp-for="Employer2.EmploymentDateFrom" class="form-control" />
+                        <span asp-validation-for="Employer2.EmploymentDateFrom" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="Employer2.EmploymentDateTo" class="control-label"></label>
+                        <input asp-for="Employer2.EmploymentDateTo" class="form-control" />
+                        <span asp-validation-for="Employer2.EmploymentDateTo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="Employer2.Tasks" class="control-label"></label>
+                        <input asp-for="Employer2.Tasks" class="form-control" />
+                        <span asp-validation-for="Employer2.Tasks" class="text-danger"></span>
+                    </div>
+                </div>
+                <hr />
+            </div>
+            <div id="employer3" style="display: none">
+                <div class="form-group">
+                    <label asp-for="Employer3.EmployerName" class="control-label"></label>
+                    <input id="employer3FN" asp-for="Employer3.EmployerName" class="form-control" />
+                    <span asp-validation-for="Employer3.EmployerName" class="text-danger"></span>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-4">
+                        <label asp-for="Employer3.EmployerCity" class="control-label"></label>
+                        <input asp-for="Employer3.EmployerCity" class="form-control" />
+                        <span asp-validation-for="Employer3.EmployerCity" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-4">
+                        <label asp-for="Employer3.EmployerState" class="control-label"></label>
+                        <select asp-for="Employer3.EmployerState" class="form-control">
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                        <span asp-validation-for="Employer3.EmployerState" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-4">
+                        <label asp-for="Employer3.EmployerZip" class="control-label"></label>
+                        <input asp-for="Employer3.EmployerZip" class="form-control" />
+                        <span asp-validation-for="Employer3.EmployerZip" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label asp-for="Employer3.EmployerNumber" class="control-label"></label>
+                        <input asp-for="Employer3.EmployerNumber" class="form-control" />
+                        <span asp-validation-for="Employer3.EmployerNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="Employer3.EmployerEmail" class="control-label"></label>
+                        <input asp-for="Employer3.EmployerEmail" class="form-control" />
+                        <span asp-validation-for="Employer3.EmployerEmail" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label asp-for="Employer3.SupervisorName" class="control-label"></label>
+                        <input asp-for="Employer3.SupervisorName" class="form-control" />
+                        <span asp-validation-for="Employer3.SupervisorName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="Employer3.JobTitle" class="control-label"></label>
+                        <input asp-for="Employer3.JobTitle" class="form-control" />
+                        <span asp-validation-for="Employer3.JobTitle" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-6">
+                        <label asp-for="Employer3.EmploymentDateFrom" class="control-label"></label>
+                        <input asp-for="Employer3.EmploymentDateFrom" class="form-control" />
+                        <span asp-validation-for="Employer3.EmploymentDateFrom" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="Employer3.EmploymentDateTo" class="control-label"></label>
+                        <input asp-for="Employer3.EmploymentDateTo" class="form-control" />
+                        <span asp-validation-for="Employer3.EmploymentDateTo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="Employer3.Tasks" class="control-label"></label>
+                        <input asp-for="Employer3.Tasks" class="form-control" />
+                        <span asp-validation-for="Employer3.Tasks" class="text-danger"></span>
+                    </div>
+                </div>
+                <hr />
+            </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="ContactEmployer" /> @Html.DisplayNameFor(model =>
@@ -417,11 +421,13 @@ model.ContactEmployer)
                 </label>
             </div>
         </section>
-        <div class="form-group">
-            <center>
-                <input type="submit" value="Save and Continue" class="btn btn-secondary" /></br>
-            </center>
-        </div>
+        <center>
+            <div class="form-group">
+                <center>
+                    <input type="submit" value="Save and Continue" class="btn btn-secondary" /></br>
+                </center>
+            </div>
+        </center>
     </form>
 </main>
 

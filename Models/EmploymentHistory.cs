@@ -37,7 +37,7 @@ namespace ArafaEmploymentApp.Models
         [Display(Name = "List any additional skills or experience here")]
         public string AdditionalSkills { get; set; }
 
-        [Display(Name = "Contact Employer?")]
+        [Display(Name = "Can we contact your most recent employer?")]
         [Required(ErrorMessage = "Must select an answer ")]
         public bool ContactEmployer { get; set; }
 
